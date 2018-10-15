@@ -63,7 +63,7 @@ public class CreateHeroTest {
         .body(jsonEntity(batman))
         .execute()
         .returnResponse();
-    System.out.println(org.apache.commons.io.IOUtils.toString(response.getEntity().getContent()));
+
     assertThat(response.getStatusLine().getStatusCode(), is(201));
 
     Document document = mongo.getCollection("heroes").find().first();
